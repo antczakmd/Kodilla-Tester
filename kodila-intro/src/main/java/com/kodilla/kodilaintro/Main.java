@@ -1,16 +1,19 @@
 package com.kodilla.kodilaintro;
 import java.util.Scanner;
 
-public class Main {
+public class Main{
     public static void main(String[] args) {
         Grades grades = new Grades();
 
         Scanner input = new Scanner(System.in);
 
         for (int i=0; i < 10; i++) {
+            System.out.println("Wprowadz liczbe "+(i+1));
             int grade = input.nextInt();
             grades.add(grade);
         }
+        System.out.println("Ostatnia ocena" + grades.theLastOne());
+        System.out.println("Srednia ocen" + grades.averageOfGrades());
 
     }
 }
