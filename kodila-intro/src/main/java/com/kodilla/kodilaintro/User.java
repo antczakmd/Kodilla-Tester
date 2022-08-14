@@ -5,6 +5,8 @@
 //        this.imie = imie;
 //        this.wiek = wiek;
 //        System.out.println("Konstruktor klasy User");
+////
+//        public void
 //
 //    }
 //
@@ -14,4 +16,4 @@
 //
 //
 //    }
-//}
+//
