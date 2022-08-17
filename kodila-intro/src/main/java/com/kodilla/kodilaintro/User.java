@@ -11,19 +11,19 @@
 //
 //    }
 //
-//    public double User(){
+//    public void User(){
 //        this.user = new double[6];
 //        this.size = 0;
 //
-//        public void add (int value) {
+//        public void add(int value) {
 //            if(this.size == 6) {
 //                return;
 //            }
 //            this.user[(int) this.size] = value;
-//            this.size++;
+//            this.size++;size
 //
 //        }
-//        public double averageOfAges () {
+//        public double averageOfAges() {
 //
 //            double suma = 0;
 //            for (double i = 0; i < user.length; i++) {
@@ -31,7 +31,6 @@
 //                System.out.println(suma);
 //            }
 //            double average = suma/(size);
-//            return average;
 //        }
 //    }
 //
