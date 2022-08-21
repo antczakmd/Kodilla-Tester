@@ -4,14 +4,11 @@ public class Application {
 
 
         Square square = new Square(2);
-        square.getCircuit();
-        square.getSurfaceArea();
+        System.out.println("Square Circuit is "+ square.getCircuit() +" Square Surface is" + square.getSurfaceArea());
         Triangle triangle = new Triangle(3,5,7,3);
-        triangle.getSurfaceArea();
-        triangle.getCircuit();
+        System.out.println("Triangle Circuit is " + triangle.getCircuit() + " Triangle Surface is " + triangle.getSurfaceArea());
         Ring ring = new Ring(5);
-        ring.getSurfaceArea();
-        ring.getCircuit();
+        System.out.println("Ring Circuit is " + ring.getCircuit() + " Ring Surface is " + ring.getSurfaceArea());
 
 
 

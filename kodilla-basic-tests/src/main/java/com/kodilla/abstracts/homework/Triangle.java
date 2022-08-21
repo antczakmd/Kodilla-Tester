@@ -16,9 +16,11 @@ public class Triangle extends Shape{
     @Override
     public double getCircuit(){
         return a + b + c;
+
     }
     @Override
     public double getSurfaceArea(){
         return (a*h)/2 ;
+
     }
 }
