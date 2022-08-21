@@ -9,8 +9,5 @@ public class Application {
         System.out.println("Triangle Circuit is " + triangle.getCircuit() + " Triangle Surface is " + triangle.getSurfaceArea());
         Ring ring = new Ring(5);
         System.out.println("Ring Circuit is " + ring.getCircuit() + " Ring Surface is " + ring.getSurfaceArea());
-
-
-
     }
 }

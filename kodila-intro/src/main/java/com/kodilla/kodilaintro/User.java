@@ -1,25 +1,14 @@
 package com.kodilla.kodilaintro;
 
 public class User {
-
     public int age;
-
-
     String name;
-
     public User(String name, int age) {
         this.name = name;
         this.age = age;
 
     }
-
-
-
  }
-
-
-
-
 class Imiona {
 
     public static void main(String[] args) {
