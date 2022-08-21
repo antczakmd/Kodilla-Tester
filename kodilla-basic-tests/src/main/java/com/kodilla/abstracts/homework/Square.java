@@ -4,25 +4,15 @@ public class Square extends Shape{
 
     int a;
 
-    public Square(int circuit, int surfaceArea) {
-        super(circuit, surfaceArea);
+    public Square(int a) {
+        this.a = a;
     }
     @Override
-    public int getCircuit(){
+    public double getCircuit(){
         return a + a + a + a;
     }
     @Override
-    public int getSurfaceArea(){
+    public double getSurfaceArea(){
         return  a *a;
-    }
-
-    @Override
-    public double getCircuit(double r) {
-        return 0;
-    }
-
-    @Override
-    public double getSurfaceArea(double r) {
-        return 0;
     }
 }

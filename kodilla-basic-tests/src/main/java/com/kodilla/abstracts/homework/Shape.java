@@ -2,31 +2,21 @@ package com.kodilla.abstracts.homework;
 
 public abstract class Shape {
 
-    private int circuit;
-    private int height;
-    private int aLenght;
-    private int bLenght;
-    private int cLenght;
 
 
-    private int surfaceArea;
 
-    public Shape(int circuit, int surfaceArea) {
-        this.circuit = circuit;
-        this.surfaceArea = surfaceArea;
+
+
+    public Shape() {
+
     }
 
-    public int getCircuit() {
-        return circuit;
-    }
 
-    public int getSurfaceArea() {
-        return surfaceArea;
-    }
 
-    public abstract double getCircuit(double r);
 
-    public abstract double getSurfaceArea(double r);
+    public abstract double getCircuit();
+
+    public abstract double getSurfaceArea();
 }
 
 //    public abstract double getCirclePerimeter(double r);

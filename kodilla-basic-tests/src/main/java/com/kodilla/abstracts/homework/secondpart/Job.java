@@ -1,14 +1,14 @@
-package com.kodilla.abstracts.homework;
+package com.kodilla.abstracts.homework.secondpart;
 
 public abstract class Job {
 
-    public int name;
+    String name;
     public int age;
     public int salary;
 
-    public int responsibilities;
+    String responsibilities;
 
-    public Job (int salary, int responsibilities, int name, int age){
+    public Job (int salary, String responsibilities, String name, int age){
         this.salary = salary;
         this.responsibilities = responsibilities;
         this.age = age;

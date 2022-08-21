@@ -1,20 +1,23 @@
 package com.kodilla.abstracts.homework;
 
-public class Ring extends Shape{
+public class Ring extends Shape {
     static double PI = 3.1415927;
     int r;
 
-    public Ring(int circuit, int surfaceArea) {
-        super(circuit, surfaceArea);
+    public Ring(int r) {
+        this.r = r;
     }
+
     @Override
-    public double getSurfaceArea(double r) {
+    public double getSurfaceArea() {
         return PI * r * r;
     }
+
     @Override
-    public double getCircuit(double r) {
-        return 2 * PI *r;
+    public double getCircuit() {
+        return 2 * PI * r;
     }
+}
 
 //    @Override
 //    public double getSquareCircuit() {
@@ -36,4 +39,3 @@ public class Ring extends Shape{
 //        return 0;
 //    }
 
-}
