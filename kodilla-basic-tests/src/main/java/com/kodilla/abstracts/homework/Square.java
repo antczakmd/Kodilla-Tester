@@ -7,35 +7,22 @@ public class Square extends Shape{
     public Square(int circuit, int surfaceArea) {
         super(circuit, surfaceArea);
     }
-
     @Override
-    public double getCircleArea(double r) {
-        return 0;
-    }
-
-    @Override
-    public double circlePerimeter(double r) {
-        return 0;
-    }
-
-    @Override
-    public double getSquareCircuit(){
+    public int getCircuit(){
         return a + a + a + a;
     }
     @Override
-    public double getSquareSurfaceArea(){
-        return a *a;
+    public int getSurfaceArea(){
+        return  a *a;
     }
 
     @Override
-    public double getTriangleCircuit() {
+    public double getCircuit(double r) {
         return 0;
     }
 
     @Override
-    public double getTriangleSurfaceArea() {
+    public double getSurfaceArea(double r) {
         return 0;
     }
-
-
 }
