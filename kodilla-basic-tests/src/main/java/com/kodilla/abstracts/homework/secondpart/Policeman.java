@@ -3,19 +3,7 @@ package com.kodilla.abstracts.homework.secondpart;
 import com.kodilla.abstracts.homework.secondpart.Job;
 
 public class Policeman extends Job {
-    int age;
-    int salary;
-    String responsibilities;
-    String name;
-    String job;
 
-    public Policeman(int salary, String responsibilities, String name, int age, String job) {
-        this.salary = salary;
-        this.responsibilities = responsibilities;
-        this.age = age;
-        this.name = name;
-        this.job = job;
-    }
 
     @Override
     public void showJob(){
