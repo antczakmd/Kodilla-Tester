@@ -3,38 +3,43 @@ import java.util.Random;
 
 public class RandomNumbers {
 
-    public static void main(String[] args) {
+    private int min;
+    private int max;
 
-int num1, num2, num3, num4, num5, sum, max, min;
-
-
-
-
-
+    public RandomNumbers(){
         Random random = new Random();
-        num1 = random.nextInt(30)+1;
-        num2 = random.nextInt(30)+1;
-        num3 = random.nextInt(30)+1;
-        num4 = random.nextInt(30)+1;
-        num5 = random.nextInt(30)+1;
-        sum = num1 + num2 + num3 + num4 +num5;
-            System.out.println("suma " + sum);
-            System.out.println(num1);
-            System.out.println(num2);
-            System.out.println(num3);
-            System.out.println(num4);
-            System.out.println(num5);
+        int result = 0;
+        int sum = 0;
+        int max = 5000;
+        int getMin = 31;
+        int getMax = 0;
 
-            for(sum = 0,sum<=5000, sum++) {
-                System.out.println(sum);
+        while(sum <= max) {
+            int temp = random.nextInt(31);
+            sum = sum + temp;
+            if (temp < getMin){
+                getMin = temp;
             }
-
-
-
-
+            if (temp > getMax){
+                getMax = temp;
+            }
         }
-
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 
 
 

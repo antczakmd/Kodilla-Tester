@@ -16,36 +16,28 @@
 ////    }
 ////}
 //
-//package com.kodilla.kodilaintro;
-//
-//class Person
-//{
-//    public String name;
-//    public double age;
-//    public double height;
-//
-//    public double validateAge;
-//
-//    public double validateHeight;
-//
-//
-//    public Person(String name, double age, double height, double validateAge, double validateHeight) {
-//        this.name = name;
-//        this.age = age;
-//        this.height = height;
-//        this.validateAge = validateAge;
-//        this.validateHeight = validateHeight;
-//    }
-//}
-//class StructuralToObject {
-//public static void main(String[] args)
-//{
-//    Person adam = new Person("Adam ", 40.5, 178 );
-//        if (adam.age > 30 && adam.height > 160){
-//            System.out.println("User is older than 30 and taller than 160cm");
-//            } else {
-//            System.out.println("User is 30 (or younger) or 160cm (or shorter)");
-//                }
-//            }
-//        }
-//
+package com.kodilla.kodilaintro;
+
+public class StructuralToObject {
+    private static String name;
+    private static double age;
+    private static double height;
+
+    public StructuralToObject (String name, double age, double height){
+        this.name = name;
+        this.age = age;
+        this.height = height;
+    }
+
+    public static void main(String[] args) {
+        StructuralToObject structuralToObject = new StructuralToObject("Adam", 40.5, 178);
+        System.out.println(structuralToObject.name + "Adam " + structuralToObject.age + "40.5 " + structuralToObject + " 178");
+        if (name != null) {
+            if (age > 30 && height > 160) {
+                System.out.println("User is older than 30 and taller than 160cm");
+            } else {
+                System.out.println("User is 30 (or younger) or 160cm (or shorter)");
+            }
+        }
+    }
+}

@@ -1,35 +1,34 @@
+//Utwórz klasę abstrakcyjną Job (zawód), z polami salary oraz responsibilities.
+//Utwórz kilka konkretnych zawodów (klas dziedziczących po Job).
+//W kolejnym kroku utwórz klasę Person, która zawierać będzie pola firstName, age i job.
+//Dodaj metodę, która wyświetli obowiązki danej osoby w pracy.
+
 package com.kodilla.abstracts.homework.secondpart;
 
 public class Person {
     int age;
-    int salary;
-    String responsibilities;
     String name;
-    String job;
-    public Person(int salary, String responsibilities, int age, String name, String job) {
-        this.salary = salary;
-        this.responsibilities = responsibilities;
+    Job job;
+    public Person( int age, String name, Job job) {
         this.age = age;
         this.name = name;
         this.job = job;
-
     }
-
     public static void main(String[] args) {
 
 
-        Driver driver = new Driver();
-        driver.showResponsibilities();
-        driver.showSalary();
+        Job driver = new Driver();
+        JobProcessor processor = new JobProcessor();
+        processor.process(driver);
         driver.yourName();
-        Pilot pilot = new Pilot();
+        Job pilot = new Pilot();
+        processor.process(pilot);
         pilot.yourName();
-        pilot.showResponsibilities();
-        pilot.showSalary();
-        Policeman policeman = new Policeman();
+        Job policeman = new Policeman();
+        processor.process(policeman);
         policeman.yourName();
-        policeman.showResponsibilities();
         policeman.yourAge();
+        policeman.showJob();
 
     }
 }

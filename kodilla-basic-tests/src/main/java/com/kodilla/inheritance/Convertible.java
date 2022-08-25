@@ -1,6 +1,8 @@
 package com.kodilla.inheritance;
 
-public class Convertible extends Car{
+import com.kodilla.inheritance.Car;
+
+public class Convertible extends Car {
 
     public Convertible(int wheels, int seats) {
         super(wheels, seats);
@@ -8,7 +10,7 @@ public class Convertible extends Car{
     }
     public void openRoof() {
         System.out.println("Opening roof...");
-}
+    }
     public void closingRoof() {
         System.out.println("Closing roof...");
     }
