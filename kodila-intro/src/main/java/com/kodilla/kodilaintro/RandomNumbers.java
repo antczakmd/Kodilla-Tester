@@ -14,6 +14,8 @@ public class RandomNumbers {
         int getMin = 31;
         int getMax = 0;
 
+
+
         while(sum <= max) {
             int temp = random.nextInt(31);
             sum = sum + temp;

@@ -37,20 +37,20 @@ public class CalculatorTestSuite {
         Calculator calculator = new Calculator();
         int a = -5;
         double squaredResult = calculator.squared(a);
-        assertEquals(25, squaredResult);
+        assertEquals(25, squaredResult, 0.01);
     }
     @Test
     public void testSquaredZero() {
         Calculator calculator = new Calculator();
         int a = 0;
         double squaredResult = calculator.squared(a);
-        assertEquals(0, squaredResult);
+        assertEquals(0, squaredResult, 0.01);
     }
     @Test
     public void testSquared() {
         Calculator calculator = new Calculator();
         double a = 5;
         double squaredResult = calculator.squared(a);
-        assertEquals(25, squaredResult);
+        assertEquals(25, squaredResult, 0.01);
     }
 }
