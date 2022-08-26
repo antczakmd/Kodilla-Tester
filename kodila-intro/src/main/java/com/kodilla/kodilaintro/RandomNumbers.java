@@ -6,7 +6,12 @@ public class RandomNumbers {
     private int min;
     private int max;
 
+    public static void main(String[] args) {
+
+    }
     public RandomNumbers(){
+        this.max = max;
+        this.min = min;
         Random random = new Random();
         int result = 0;
         int sum = 0;
@@ -21,9 +26,13 @@ public class RandomNumbers {
             sum = sum + temp;
             if (temp < getMin){
                 getMin = temp;
+                temp = Math.min(temp, 0);
+                System.out.println(getMin);
             }
             if (temp > getMax){
                 getMax = temp;
+                temp = Math.max(temp, 30);
+                System.out.println(getMax);
             }
         }
     }
