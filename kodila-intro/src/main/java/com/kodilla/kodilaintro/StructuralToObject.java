@@ -29,7 +29,7 @@ public class StructuralToObject {
         this.height = height;
     }
 
-//    public static void main(String[] args) {
+    //    public static void main(String[] args) {
 //        StructuralToObject structuralToObject = new StructuralToObject("Adam", 40.5, 178);
 //        System.out.println(structuralToObject.name + "Adam " + structuralToObject.age + "40.5 " + structuralToObject + " 178");
 //        if (name != null) {
@@ -38,22 +38,32 @@ public class StructuralToObject {
 //            } else {
 //                System.out.println("User is 30 (or younger) or 160cm (or shorter)");
 
-    public void validateAge() {
-        if (name != null)
-        if (this.age > 30) {
-            System.out.println("User is older than 30 years old.");
-        } else {
-            System.out.println("User is younger than 30 years old.");
+
+
+        public void validateAge () {
+            if (this.age > 30) {
+                System.out.println("User is older than 30 years old.");
+            } else {
+                System.out.println("User is younger than 30 years old.");
+            }
         }
-        public void validateHeight() {
-            if (name != null)
+        public void validateHeight () {
             if (this.height > 160) {
                 System.out.println("User is tall.");
             } else {
                 System.out.println("User isn't tall at all.");
             }
         }
+
+    public static void main(String[] args) {
+        StructuralToObject structuralToObject = new StructuralToObject("Adam", 40.5, 178);
+        System.out.println(structuralToObject.name + "Adam " + structuralToObject.age + "40.5 " + structuralToObject.height + " 178");
     }
-}
+
+    }
+
+
+
+
 
 
