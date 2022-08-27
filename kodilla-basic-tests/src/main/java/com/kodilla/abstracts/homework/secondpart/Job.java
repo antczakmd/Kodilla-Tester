@@ -20,11 +20,11 @@ public abstract class Job {
 
     }
 
-    public abstract void showJob();
-
-
-    public abstract void yourName();
-    public abstract void yourAge();
+//    public abstract void showJob();
+//
+//
+//    public abstract void yourName();
+//    public abstract void yourAge();
 
 
 }

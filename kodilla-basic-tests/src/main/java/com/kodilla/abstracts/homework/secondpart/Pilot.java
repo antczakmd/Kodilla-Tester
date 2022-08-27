@@ -9,19 +9,19 @@ public class Pilot extends Job {
     }
 
 
-    @Override
-    public void showJob(){
-        System.out.println("My job is being Pilot.");
-    }
-    @Override
-    public void yourName() {
-        System.out.println("My name is George.");
-    }
+//    @Override
+//    public void showJob(){
+//        System.out.println("My job is being Pilot.");
+//    }
+//    @Override
+//    public void yourName() {
+//        System.out.println("My name is George.");
+//    }
+//
+//    @Override
+//    public void yourAge() {
+//        System.out.println("I am 58.");
 
-    @Override
-    public void yourAge() {
-        System.out.println("I am 58.");
-
-    }
+//    }
 }
 

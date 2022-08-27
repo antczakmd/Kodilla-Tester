@@ -18,7 +18,7 @@ public class Mercedes implements Car {
         }
 
         @Override
-        public void decreaseSpeed () {
+        public double decreaseSpeed () {
             speed = speed - 30;
         }
     }
