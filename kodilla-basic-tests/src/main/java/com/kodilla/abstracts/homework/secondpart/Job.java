@@ -12,19 +12,13 @@ public abstract class Job {
     }
 
     public int getSalary() {
-        return salary;
+        return this.salary;
     }
 
     public String getResponsibilities(){
-        return responsibilities;
+        return this.responsibilities;
 
     }
-
-//    public abstract void showJob();
-//
-//
-//    public abstract void yourName();
-//    public abstract void yourAge();
 
 
 }

@@ -5,36 +5,28 @@
 
 package com.kodilla.abstracts.homework.secondpart;
 
-public class Person {
+public class Person extends Policeman{
     int age;
-    Job name;
-    Job job;
-    public Person( int age, Job name, Job job) {
+    String name;
+    String job;
+    public Person( int age, String name, String job) {
         this.age = age;
         this.name = name;
         this.job = job;
     }
-    public static void main(String[] args) {
 
-   //     Person person = new Person(27, "Brian", "driver");
-
-        Driver driver = new Driver();
-        driver.getResponsibilities();
-        Pilot pilot = new Pilot();
-        pilot.getResponsibilities();
-        Policeman policeman = new Policeman();
-        policeman.getResponsibilities();
-
+    public String getName() {
+        return this.name;
     }
+
+
+    public void printResponsibilities() {
+        System.out.println(this.getName() + "'s responsibilities at work are: " + this.getResponsibilities());
+    }
+
+
+
+
 }
-//        Job pilot = new Pilot();
-//
-//        pilot.yourName();
-//        Job policeman = new Policeman();
-//
-//        policeman.yourName();
-//        policeman.yourAge();
-//        policeman.showJob();
-//        policeman.getResponsibilities();
-//        policeman.getSalary();
+
 

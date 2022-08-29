@@ -4,24 +4,10 @@ package com.kodilla.abstracts.homework.secondpart;
 
 public class Pilot extends Job {
 
+    public static String jobName = "Pilot.";
     public Pilot() {
-        super(100000,"flying");
+        super(100000,"Operate the plane, joke with passengers.");
     }
 
-
-//    @Override
-//    public void showJob(){
-//        System.out.println("My job is being Pilot.");
-//    }
-//    @Override
-//    public void yourName() {
-//        System.out.println("My name is George.");
-//    }
-//
-//    @Override
-//    public void yourAge() {
-//        System.out.println("I am 58.");
-
-//    }
 }
 
