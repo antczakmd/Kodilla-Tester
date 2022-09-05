@@ -6,7 +6,7 @@ public class Vw implements Car{
     private int acceleration;
     private int brakes;
 
-    public Vw(int speed, int acceleration, int brakes) {
+    public Vw(double speed, double acceleration, double brakes) {
         this.speed = speed;
         this.acceleration = acceleration;
         this.brakes = brakes;
