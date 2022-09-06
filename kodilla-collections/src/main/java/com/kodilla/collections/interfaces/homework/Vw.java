@@ -2,21 +2,21 @@ package com.kodilla.collections.interfaces.homework;
 
 public class Vw implements Car{
 
-    int speed;
-    private int acceleration;
-    private int brakes;
+    double speed;
+    private double acceleration;
+    private double brakes;
 
-    public Vw(double speed, double acceleration, double brakes) {
+    public Vw(int speed, int acceleration, int brakes) {
         this.speed = speed;
         this.acceleration = acceleration;
         this.brakes = brakes;
     }
-    public int getSpeed() {
+    public double getSpeed() {
 
         return speed;
     }
 
-    public int getAcceleration() {
+    public double getAcceleration() {
         return acceleration;
     }
 
