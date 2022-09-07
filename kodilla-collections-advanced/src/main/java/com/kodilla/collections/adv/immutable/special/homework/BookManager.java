@@ -9,7 +9,6 @@ public class BookManager {
         Book newBook = new Book(title, author);
 
         for (Book book : bookDirectory) {
-            System.out.println("Does it exist? " + book.equals(newBook));
             if (book.equals(newBook)) {
                 return book;
             }

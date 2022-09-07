@@ -6,7 +6,7 @@ public class Bmw implements Car{
     private double acceleration;
     private double brakes;
 
-    public Bmw(int speed, int acceleration, int brakes) {
+    public Bmw(double speed, double acceleration, double brakes) {
         this.speed = speed;
         this.acceleration = acceleration;
         this.brakes = brakes;
@@ -15,6 +15,15 @@ public class Bmw implements Car{
     public double getSpeed() {
 
         return speed;
+    }
+
+    @Override
+    public String toString() {
+        return "Bmw{" +
+                "speed=" + speed +
+                ", acceleration=" + acceleration +
+                ", brakes=" + brakes +
+                '}';
     }
 
     public double getAcceleration() {
