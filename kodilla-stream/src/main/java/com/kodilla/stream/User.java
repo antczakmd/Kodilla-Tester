@@ -31,6 +31,10 @@ public class User {
         return group;
     }
 
+    public static String getUserName(User user) {
+        return user.getUsername();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -42,6 +46,10 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(username, age, numberOfPost, group);
+    }
+
+    public User getUser(User user) {
+        return user;
     }
 }
 

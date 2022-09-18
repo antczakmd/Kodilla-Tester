@@ -12,7 +12,7 @@ public class UsersManager {
 
    // private static void processUsersStream() {
    // UserRepository.getUserList()
-    private static List<String> filterChemistGroupUsernames() {
+    public static List<String> filterChemistGroupUsernames() {
         List<String> usernames = UserRepository.getUserList()
                 .stream()
                 .filter(user -> user.getGroup().equals("Chemists"))
@@ -23,5 +23,13 @@ public class UsersManager {
     }
     public static String getUserName(User user) {
         return user.getUsername();
+    }
+    public static List<User> filterUsersByAge(int age) {
+        List<User> usersAge = UserRepository.getUserList()
+                .stream()
+                .filter(x -> (x.getAge() > age))
+                .map(y -> y.getUser(new User(y.getUsername(), y.getAge(), y.getNumberOfPost(), y.getGroup())))
+                .collect(Collectors.toList());
+        return usersAge;
     }
 }
