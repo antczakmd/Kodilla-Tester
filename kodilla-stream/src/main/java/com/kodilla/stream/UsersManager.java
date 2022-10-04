@@ -28,7 +28,6 @@ public class UsersManager {
         List<User> usersAge = UserRepository.getUserList()
                 .stream()
                 .filter(x -> (x.getAge() > age))
-                .map(y -> y.getUser(y.getUsername(), y.getAge(), y.getNumberOfPost(), y.getGroup()))
                 .collect(Collectors.toList());
         return usersAge;
     }
