@@ -5,9 +5,10 @@ public class Warehouse {
 
     public Set<Order> orderList = new HashSet<>();
 
-    public void addOrder(Order order) {
+    public Order addOrder(Order order) {
         orderList.add(order);
         System.out.println("Order " + order + " added.");
+        return order;
 
     }
 
