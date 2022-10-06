@@ -5,15 +5,15 @@ public class Warehouse {
 
     public Set<Order> orderList = new HashSet<>();
 
-    public Order addOrder(Order order) {
+    public void addOrder(Order order) {
         orderList.add(order);
         System.out.println("Order " + order + " added.");
-        return order;
+
 
     }
 
-    public void getOrder(String number) throws OrderDoesntExistException {
+    public Order getOrder(String number) throws OrderDoesntExistException {
         System.out.println("Searching for order No. " + number);
-
+        return order;
     }
 }
