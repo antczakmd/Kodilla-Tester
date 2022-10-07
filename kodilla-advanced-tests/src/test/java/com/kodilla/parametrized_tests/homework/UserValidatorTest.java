@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.*;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class UserValidatorTestSuite {
+class UserValidatorTest {
 
     private UserValidator validator = new UserValidator();
 

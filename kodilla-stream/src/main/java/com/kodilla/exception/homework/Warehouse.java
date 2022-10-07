@@ -3,7 +3,7 @@ import java.util.HashSet;
 import java.util.Set;
 public class Warehouse {
 
-    public Set<Order> orderList = new HashSet<>();
+    private Set<Order> orderList = new HashSet<>();
 
     public void addOrder(Order order) {
         orderList.add(order);
@@ -13,7 +13,10 @@ public class Warehouse {
     }
 
     public Order getOrder(String number) throws OrderDoesntExistException {
+    Order result = orderList.stream()
+                        .filter(o -> o.getNumber().equals(number))
+                                .findFirst().orElseThrow(()-> new OrderDoesntExistException());
         System.out.println("Searching for order No. " + number);
-        return order;
+        return result;
     }
 }
