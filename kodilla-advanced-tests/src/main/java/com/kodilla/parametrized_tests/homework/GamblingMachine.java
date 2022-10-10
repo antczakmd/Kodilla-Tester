@@ -4,8 +4,7 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-
-class GamblingMachine {
+public class GamblingMachine {
 
     public int howManyWins(Set<Integer> userNumbers) throws InvalidNumbersException {
         validateNumbers(userNumbers);
@@ -18,22 +17,14 @@ class GamblingMachine {
         }
         return count;
     }
-
-    public static void validateNumbers(Set<Integer> numbers) throws InvalidNumbersException {
-        if (isNotCorrectSize(numbers) || isAnyNumberOutOfDeclaredScope(numbers)) {
+    static void validateNumbers(Set<Integer> numbers) throws InvalidNumbersException {
+        if (numbers.size() != 6) {
+            throw new InvalidNumbersException();
+        }
+        if (numbers.stream().anyMatch(number -> number < 1)) {
             throw new InvalidNumbersException();
         }
     }
-
-    private boolean isAnyNumberOutOfDeclaredScope(Set<Integer> numbers) {
-        return numbers.stream()
-                .anyMatch(number -> number < 1 || number > 49);
-    }
-
-    private boolean isNotCorrectSize(Set<Integer> numbers) {
-        return numbers.size() != 6;
-    }
-
     private Set<Integer> generateComputerNumbers() {
         Set<Integer> numbers = new HashSet<>();
         Random generator = new Random();

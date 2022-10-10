@@ -77,4 +77,3 @@ class GamblingMachineTest {
         assertNotNull(gamblingMachine.howManyWins(expectedParsed));
     }
 }
-
