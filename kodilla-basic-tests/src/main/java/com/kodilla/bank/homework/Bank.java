@@ -17,6 +17,7 @@ public class Bank {
     public void addCashMachine(CashMachine index) {
         this.size++;
         CashMachine[] newTab = new CashMachine[this.size];
+        System.arraycopy(cashmachines, 0, newTab, 0, cashmachines.length);
         newTab[this.size - 1 ] = index;
         this.cashmachines = newTab;
     }
