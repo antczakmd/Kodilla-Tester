@@ -1,11 +1,12 @@
 package com.kodilla.mockito.homework;
 
-import com.kodilla.parametrized_tests.homework.Person;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class WeatherAlertService {
 
@@ -17,14 +18,6 @@ public class WeatherAlertService {
     }
 
     public void removeLocation(Location location) {
-        System.out.println("Removing location " + location + " from the system.");
-        for (Map.Entry<Location, List<Person>> entry : allTheLocations.entrySet()) {
-            if (entry.getKey().equals(location)) {
-                for(Person person : entry.getValue()) {
-                    entry.getKey().removeSubscriber(person);
-                }
-            }
-        }
         allTheLocations.remove(location);
     }
 
@@ -35,48 +28,33 @@ public class WeatherAlertService {
         } else {
             System.out.println("Location found.");
         }
-        for (Map.Entry<Location, List<Person>> entry : allTheLocations.entrySet()) {
-            if (entry.getKey().equals(location)) {
-                entry.getValue().add(person);
-                entry.getKey().receiveSubscriber(person);
-                System.out.println("Adding subscriber " + person + " to location " + location);
-            }
-        }
+        allTheLocations.get(location).add(person);
+
     }
 
     public void removeSubscriberFromLocation(Person person, Location location) {
-        for (Map.Entry<Location, List<Person>> entry : allTheLocations.entrySet()) {
-            if(entry.getKey().equals(location) && entry.getValue().contains(person)) {
-                entry.getValue().remove(person);
-                entry.getKey().removeSubscriber(person);
-                System.out.println("Removing subscriber " + person + " from location " + location + ".");
-            }
+        if (this.allTheLocations.containsKey(location)) {
+            this.allTheLocations.get(location).remove(person);
         }
     }
 
     public void removeSubscriberFromAllLocations(Person person) {
         for (Map.Entry<Location, List<Person>> entry : allTheLocations.entrySet()) {
-            if(entry.getValue().contains(person)) {
                 entry.getValue().remove(person);
-                entry.getKey().removeSubscriber(person);
-            }
         }
         System.out.println("Removing subscriber " + person + " from all followed locations.");
     }
 
     public void sendNotificationToLocation(WeatherNotification weatherNotification, Location location) {
-        for (Map.Entry<Location, List<Person>> entry : this.allTheLocations.entrySet()) {
-            if(entry.getKey().equals(location)) {
-                entry.getValue().forEach(person -> person.receive(weatherNotification));
-                System.out.println("Notification sent to subscribers of " + location);
-            }
+        if (this.allTheLocations.containsKey(location)) {
+            this.allTheLocations.get(location).forEach(person -> person.receive(weatherNotification));
         }
     }
 
     public void sendNotificationToAll(WeatherNotification weatherNotification) {
-        for (Map.Entry<Location, List<Person>> entry : this.allTheLocations.entrySet()) {
-            entry.getValue().forEach(person -> person.receive(weatherNotification));
-            System.out.println("Notification sent to all.");
-        }
+        this.allTheLocations.values().stream()
+                .flatMap(persons -> persons.stream())
+                .collect(Collectors.toSet())
+                .forEach(person -> person.receive(weatherNotification));
     }
 }
