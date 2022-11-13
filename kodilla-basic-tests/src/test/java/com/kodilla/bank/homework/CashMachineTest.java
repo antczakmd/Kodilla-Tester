@@ -40,17 +40,9 @@ public class CashMachineTest {
         cashMachine.addOperation(3000);
         cashMachine.addOperation(100);
         int a = cashMachine.getOperations().length;
-        assertEquals(2, a);
+        assertEquals(3, a);
     }
-    @Test
-    public void shouldAddNumberOfTransaction(){
-        CashMachine cashMachine = new CashMachine();
-        cashMachine.addNumberOfTransaction();
-        cashMachine.addNumberOfTransaction();
-        cashMachine.addNumberOfTransaction();
-        cashMachine.addNumberOfTransaction();
-        assertEquals(5, cashMachine.addNumberOfTransaction());
-    }
+
 
     @Test
     public void shouldAddAmountToBalance() {
@@ -58,15 +50,16 @@ public class CashMachineTest {
         cashMachine.addOperation(0);
         cashMachine.addOperation(5000);
         cashMachine.addOperation(-500);
-        assertEquals(9500, cashMachine.balanceOfCashMachine());
+        assertEquals(2,cashMachine.getOperations().length);
+        assertEquals(4500, cashMachine.balanceOfCashMachine());
     }
     @Test
-    public void shouldNotAddAmountLessThanMinus2000ToBalance(){
+    public void shouldCalculateBalance(){
         CashMachine cashMachine = new CashMachine();
         cashMachine.addOperation(1000);
         cashMachine.addOperation(-5000);
         cashMachine.addOperation(0);
-        assertEquals(11000, cashMachine.balanceOfCashMachine());
+        assertEquals(-4000, cashMachine.balanceOfCashMachine());
     }
     @Test
     public void shouldNotAddZeroToBalance() {
@@ -74,7 +67,7 @@ public class CashMachineTest {
         cashMachine.addOperation(-0);
         cashMachine.addOperation(2000);
         cashMachine.addOperation(0);
-        assertEquals(12000, cashMachine.balanceOfCashMachine());
+        assertEquals(2000, cashMachine.balanceOfCashMachine());
     }
     @Test
     public void shouldCountAverageOfOperation(){
@@ -83,7 +76,7 @@ public class CashMachineTest {
         cashMachine.addOperation(3000);
         cashMachine.addOperation(1000);
         cashMachine.addOperation(0);
-        assertEquals(2000, cashMachine.getAverageOfTransaction());
+        assertEquals(333.0, cashMachine.getAverageOfTransaction());
     }
     @ Test
     public void shouldAddTogetherAllWithdraws(){      // getBalanceOfWithdraws()
@@ -91,15 +84,15 @@ public class CashMachineTest {
         cashMachine.addOperation(-1000);
         cashMachine.addOperation(-2000);
         cashMachine.addOperation(-2000);
-        assertEquals(-1000, cashMachine.getBalanceOfWithdraws());
+        assertEquals(-5000, cashMachine.getBalanceOfWithdraws());
     }
     @ Test
-    public void shouldNotAddDeposits(){             // getBalanceOfWithdraws()
+    public void calculateWithdraws(){             // getBalanceOfWithdraws()
         CashMachine cashMachine = new CashMachine();
         cashMachine.addOperation(-1000);
         cashMachine.addOperation(2000);
         cashMachine.addOperation(-2000);
-        assertEquals(-1000, cashMachine.getBalanceOfWithdraws());
+        assertEquals(-3000, cashMachine.getBalanceOfWithdraws());
     }
 
     @Test

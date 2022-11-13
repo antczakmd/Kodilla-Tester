@@ -12,19 +12,10 @@ class BankTest {
         CashMachine Wodna = new CashMachine();
         bank.addCashMachine(Wodna);
         Wodna.addOperation(1000);
-        assertEquals(11000, Wodna.balanceOfCashMachine());
+        assertEquals(1000, Wodna.balanceOfCashMachine());
     }
 
-    @Test
-    public void shouldAddNewCashMachine() {
-        Bank bank = new Bank();
-        CashMachine Wodna = new CashMachine();
-        bank.addCashMachine(Wodna);
-        CashMachine Piotrkowska = new CashMachine();
-        bank.addCashMachine(Piotrkowska);
-        assertEquals(2, bank.getCashmachines().length);
-        assertSame(Piotrkowska, bank.getCashmachines()[1]);
-    }
+
 
     @Test
     public void shouldAddNewOperationsToNewCashMachine() {
@@ -34,7 +25,7 @@ class BankTest {
         Wodna.addOperation(1000);
         Wodna.addOperation(3000);
         Wodna.addOperation(-4000);
-        assertEquals(13000, Wodna.balanceOfCashMachine());
+        assertEquals(0, bank.getBalanceOfAllCashMachines());
     }
 
     @Test
@@ -51,7 +42,7 @@ class BankTest {
         CashMachine Dluga = new CashMachine();
         bank.addCashMachine(Dluga);
         Dluga.addOperation(-3000);
-        assertEquals(12000, bank.getBalanceOfAllCashMachines());
+        assertEquals(11000, bank.getBalanceOfAllCashMachines());
     }
 
     @Test
@@ -69,7 +60,7 @@ class BankTest {
         bank.addCashMachine(Dluga);
         Dluga.addOperation(-5000);
         Dluga.addOperation(-2000);
-        assertEquals(4, bank.numberOfAllWithdraws());
+        assertEquals(5, bank.numberOfAllWithdraws());
     }
 
     @Test
@@ -87,7 +78,7 @@ class BankTest {
         bank.addCashMachine(Dluga);
         Dluga.addOperation(5000);
         Dluga.addOperation(1000);
-        assertEquals(4, bank.numberOfAllDeposits());
+        assertEquals(5, bank.numberOfAllDeposits());
     }
 
     @Test

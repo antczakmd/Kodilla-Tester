@@ -10,9 +10,7 @@ public class Bank {
         this.size = 0;
     }
 
-    public CashMachine[] getCashmachines() {
-        return cashmachines;
-    }
+
 
     public void addCashMachine(CashMachine index) {
         this.size++;
@@ -43,8 +41,8 @@ public class Bank {
         return deposits;
     }
     public double averageOfAllWithdraws() {
-        int avgOfWithdraws = 0;
-        int sumOfWithdraws = 0;
+        double avgOfWithdraws = 0;
+        double sumOfWithdraws = 0;
         int numberOfWithdraws =0;
 
         for (int i = 0; i < cashmachines.length; i++) {
@@ -57,8 +55,8 @@ public class Bank {
         return avgOfWithdraws;
     }
     public double averageOfAllDeposits() {
-        int avgOfDeposits = 0;
-        int sumOfDeposits = 0;
+        double avgOfDeposits = 0;
+        double sumOfDeposits = 0;
         int numberOfDeposits = 0;
 
         for (int i = 0; i < cashmachines.length; i++) {

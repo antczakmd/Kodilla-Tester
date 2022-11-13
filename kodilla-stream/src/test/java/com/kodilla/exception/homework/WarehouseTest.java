@@ -26,12 +26,11 @@ public class WarehouseTest {
     public void testGetOrder_withException() throws OrderDoesntExistException {
         //when
         warehouse.addOrder(new Order("2"));
-        warehouse.getOrder("3");
+
         //then
-        Order expectedOrder = null;
-        assertNotEquals(expectedOrder.getNumber(), warehouse.getOrder("2").getNumber());
+
         assertThrows(OrderDoesntExistException.class, () -> {
-            Integer.parseInt("One");                }
+            warehouse.getOrder("3");                }
         );
     }
 }
