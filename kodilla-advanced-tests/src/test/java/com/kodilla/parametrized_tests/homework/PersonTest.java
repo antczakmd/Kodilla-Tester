@@ -10,11 +10,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class PersonTest {
 
     @ParameterizedTest
-    @MethodSource(value = "com.kodilla.parametrized_tests.homework.DataSources#provideDataForTestingBMI")
-    void shouldCalculateBMIWithProvidedDataExternalSource(Person person) {
-        System.out.println(person.getBMI());
-        Stream<String> expected = Stream.of("Overweight", "Obese Class V (Super Obese)", "Normal (healthy weight)", "Normal (healthy weight)", "Very severely underweight", "Obese Class IV (Morbidly Obese)");
-        boolean match = expected.anyMatch(un -> un.equals(person.getBMI()));
-        assertTrue(match);
+    @MethodSource(value = "com.kodilla.parametrized_tests.homework.DataSources#provideDataForTesting")
+    void shouldCalculateBMIWithProvidedDataExternalSource(Person person, String expected) {
+        assertEquals(expected, person.getBMI());
     }
 }
