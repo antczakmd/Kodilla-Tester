@@ -20,25 +20,21 @@ public class WeatherAlertServiceTest {
         Mockito.verify(person, Mockito.never()).receive(weatherNotification);
     }
 
-    @Test
-    public void shouldAddLocation() {
-        Location locationTwo = Mockito.mock(Location.class);
-        weatherAlertService.addLocation(locationTwo);
-        weatherAlertService.addSubscriber(person, locationTwo);
-        Mockito.verify(locationTwo, Mockito.times(1)).receiveSubscriber(person);
-    }
+
 
     @Test
     public void shouldAddSubscriberIfLocationIsInTheSystem() {
         weatherAlertService.addLocation(location);
         weatherAlertService.addSubscriber(person, location);
-        Mockito.verify(location, Mockito.times(1)).receiveSubscriber(person);
+        weatherAlertService.sendNotificationToLocation(weatherNotification, location);
+        Mockito.verify(person, Mockito.times(1)).receive(weatherNotification);
     }
 
     @Test
-    public void shouldAddSubscriberIfLocationWasNotTheSystem() {
+    public void shouldAddSubscriberIfLocationWasNotInTheSystem() {
         weatherAlertService.addSubscriber(person, location);
-        Mockito.verify(location, Mockito.times(1)).receiveSubscriber(person);
+        weatherAlertService.sendNotificationToLocation(weatherNotification, location);
+        Mockito.verify(person, Mockito.times(1)).receive(weatherNotification);
     }
 
     @Test
@@ -60,7 +56,8 @@ public class WeatherAlertServiceTest {
     public void shouldUnsubscribePersonFromLocation() {
         weatherAlertService.addSubscriber(person, location);
         weatherAlertService.removeSubscriberFromLocation(person, location);
-        Mockito.verify(location, Mockito.times(1)).removeSubscriber(person);
+        weatherAlertService.sendNotificationToLocation(weatherNotification, location);
+        Mockito.verify(person, Mockito.never()).receive(weatherNotification);
     }
 
     @Test
@@ -77,8 +74,9 @@ public class WeatherAlertServiceTest {
         weatherAlertService.addSubscriber(person, location);
         weatherAlertService.addSubscriber(person, locationTwo);
         weatherAlertService.removeSubscriberFromAllLocations(person);
-        Mockito.verify(location, Mockito.times(1)).removeSubscriber(person);
-        Mockito.verify(locationTwo, Mockito.times(1)).removeSubscriber(person);
+        weatherAlertService.sendNotificationToLocation(weatherNotification,location);
+        weatherAlertService.sendNotificationToLocation(weatherNotification, locationTwo);
+        Mockito.verify(person, Mockito.never()).receive(weatherNotification);
     }
 
     @Test
@@ -153,8 +151,10 @@ public class WeatherAlertServiceTest {
         weatherAlertService.addSubscriber(person,location);
         weatherAlertService.addSubscriber(personTwo,location);
         weatherAlertService.removeLocation(location);
-        Mockito.verify(location, Mockito.times(1)).removeSubscriber(person);
-        Mockito.verify(location, Mockito.times(1)).removeSubscriber(personTwo);
+        weatherAlertService.sendNotificationToLocation(weatherNotification, location);
+        Mockito.verify(personTwo, Mockito.never()).receive(weatherNotification);
+        Mockito.verify(person, Mockito.never()).receive(weatherNotification);
+
     }
 
     @Test
